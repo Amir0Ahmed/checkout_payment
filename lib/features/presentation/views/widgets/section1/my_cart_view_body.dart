@@ -1,4 +1,4 @@
-import 'package:checkout_payment/core/widgets/customButton.dart';
+import 'package:checkout_payment/core/widgets/custom_button.dart';
 import 'package:checkout_payment/features/data/models/order_info_model.dart';
 import 'package:checkout_payment/features/data/models/total_price_model.dart';
 import 'package:checkout_payment/features/presentation/views/payment_details_view.dart';
