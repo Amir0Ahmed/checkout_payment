@@ -2,9 +2,7 @@ import 'package:checkout_payment/core/widgets/custom_button.dart';
 import 'package:checkout_payment/features/presentation/views/widgets/section2/custom_credit_card.dart';
 import 'package:checkout_payment/features/presentation/views/widgets/section2/payment_methods.dart';
 import 'package:checkout_payment/features/presentation/views/widgets/section3/thank_you_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class PaymentDetailsViewBody extends StatefulWidget {
   const PaymentDetailsViewBody({super.key});
@@ -42,7 +40,7 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
           hasScrollBody: false,
           child: Column(
             children: [
-              Expanded(
+              const Expanded(
                 child: SizedBox(
                   height: 35,
                 ),
@@ -53,13 +51,13 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return ThankYouView();
+                        return const ThankYouView();
                       },
                     ),
                   );
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
             ],

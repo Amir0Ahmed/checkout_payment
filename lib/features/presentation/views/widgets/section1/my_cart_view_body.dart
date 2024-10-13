@@ -2,7 +2,7 @@ import 'package:checkout_payment/core/widgets/custom_button.dart';
 import 'package:checkout_payment/features/data/models/order_info_model.dart';
 import 'package:checkout_payment/features/data/models/total_price_model.dart';
 import 'package:checkout_payment/features/presentation/views/payment_details_view.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/section1/order_info_item.dart';
+import 'package:checkout_payment/features/presentation/views/widgets/common_widget/order_info_item.dart';
 import 'package:checkout_payment/features/presentation/views/widgets/section1/total_price_item.dart';
 import 'package:flutter/material.dart';
 
