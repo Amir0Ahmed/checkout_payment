@@ -1,6 +1,7 @@
 import 'package:checkout_payment/core/widgets/custom_button.dart';
 import 'package:checkout_payment/features/presentation/views/widgets/section2/custom_credit_card.dart';
 import 'package:checkout_payment/features/presentation/views/widgets/section2/payment_methods.dart';
+import 'package:checkout_payment/features/presentation/views/widgets/section3/thank_you_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -37,7 +38,7 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
             ],
           ),
         ),
-        const SliverFillRemaining(
+        SliverFillRemaining(
           hasScrollBody: false,
           child: Column(
             children: [
@@ -46,7 +47,18 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
                   height: 35,
                 ),
               ),
-              CustomButton(title: 'Pay'),
+              CustomButton(
+                title: 'Pay',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ThankYouView();
+                      },
+                    ),
+                  );
+                },
+              ),
               SizedBox(
                 height: 16,
               ),
