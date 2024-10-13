@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 AppBar buildAppBar({required String? title}) => AppBar(
+      backgroundColor: Colors.transparent,
       leading: Padding(
         padding: const EdgeInsets.only(left: 20),
         child: Center(
