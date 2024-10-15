@@ -20,8 +20,6 @@ class ApiService {
       options: Options(
         contentType: contentType,
         headers: headersInput ?? headers,
-        sendTimeout: const Duration(seconds: 7),
-        receiveTimeout: const Duration(seconds: 7),
       ),
     );
     return response;
@@ -32,7 +30,7 @@ class ApiService {
     required String endPoint,
     @required String? token,
     @required String? contentType,
-    required Map<String, dynamic> body,
+    @required Map<String, String>? body,
     Map<String, dynamic>? headersInput,
   }) async {
     Map<String, String> headers = {};
@@ -46,8 +44,6 @@ class ApiService {
       options: Options(
         contentType: contentType,
         headers: headersInput ?? headers,
-        sendTimeout: const Duration(seconds: 7),
-        receiveTimeout: const Duration(seconds: 7),
       ),
     );
     return response;
