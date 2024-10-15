@@ -1,1 +1,1 @@
-const String kStripeBaseUrl='https://api.stripe.com';
+const String kStripeBaseUrl = 'https://api.stripe.com/';

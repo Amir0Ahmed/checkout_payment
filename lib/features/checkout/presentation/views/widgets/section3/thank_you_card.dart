@@ -1,9 +1,9 @@
 import 'package:checkout_payment/core/utils/styles.dart';
-import 'package:checkout_payment/features/data/models/order_info_model.dart';
-import 'package:checkout_payment/features/data/models/total_price_model.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/common_widget/order_info_item.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/section1/total_price_item.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/section3/card_preview_item.dart';
+import 'package:checkout_payment/features/checkout/data/models/order_info_model.dart';
+import 'package:checkout_payment/features/checkout/data/models/total_price_model.dart';
+import 'package:checkout_payment/features/checkout/presentation/views/widgets/common_widget/order_info_item.dart';
+import 'package:checkout_payment/features/checkout/presentation/views/widgets/section1/total_price_item.dart';
+import 'package:checkout_payment/features/checkout/presentation/views/widgets/section3/card_preview_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

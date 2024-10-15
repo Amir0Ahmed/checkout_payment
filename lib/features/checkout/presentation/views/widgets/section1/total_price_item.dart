@@ -1,5 +1,5 @@
 import 'package:checkout_payment/core/utils/styles.dart';
-import 'package:checkout_payment/features/data/models/total_price_model.dart';
+import 'package:checkout_payment/features/checkout/data/models/total_price_model.dart';
 import 'package:flutter/material.dart';
 
 class TotalPriceItem extends StatelessWidget {

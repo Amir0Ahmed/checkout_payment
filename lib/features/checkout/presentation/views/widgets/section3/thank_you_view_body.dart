@@ -1,6 +1,6 @@
 import 'package:checkout_payment/core/widgets/check_avtar.dart';
 import 'package:checkout_payment/core/widgets/custom_dash_line.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/section3/thank_you_card.dart';
+import 'package:checkout_payment/features/checkout/presentation/views/widgets/section3/thank_you_card.dart';
 import 'package:flutter/material.dart';
 
 class ThankYouViewBody extends StatelessWidget {
@@ -44,4 +44,3 @@ class ThankYouViewBody extends StatelessWidget {
     );
   }
 }
-

@@ -1,7 +1,7 @@
 import 'package:checkout_payment/core/widgets/custom_button.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/section2/custom_credit_card.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/section2/payment_methods.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/section3/thank_you_view.dart';
+import 'package:checkout_payment/features/checkout/presentation/views/widgets/section2/custom_credit_card.dart';
+import 'package:checkout_payment/features/checkout/presentation/views/widgets/section2/payment_methods.dart';
+import 'package:checkout_payment/features/checkout/presentation/views/widgets/section3/thank_you_view.dart';
 import 'package:flutter/material.dart';
 
 class PaymentDetailsViewBody extends StatefulWidget {

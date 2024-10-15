@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PaymentMethodsItem extends StatelessWidget {
-  const PaymentMethodsItem({super.key, this.isActive = false, required this.image});
+  const PaymentMethodsItem(
+      {super.key, this.isActive = false, required this.image});
   final bool isActive;
   final String image;
   @override
