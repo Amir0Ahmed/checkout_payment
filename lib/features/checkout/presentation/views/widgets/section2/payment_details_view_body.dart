@@ -3,6 +3,7 @@ import 'package:checkout_payment/features/checkout/presentation/views/widgets/se
 import 'package:checkout_payment/features/checkout/presentation/views/widgets/section2/payment_methods.dart';
 import 'package:checkout_payment/features/checkout/presentation/views/widgets/section3/thank_you_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class PaymentDetailsViewBody extends StatefulWidget {
   const PaymentDetailsViewBody({super.key});
@@ -13,6 +14,7 @@ class PaymentDetailsViewBody extends StatefulWidget {
 
 class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -31,6 +33,7 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
                 height: 30,
               ),
               CustomCreditCard(
+                autovalidateMode: autovalidateMode,
                 formKey: formKey,
               ),
             ],
@@ -48,13 +51,19 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
               CustomButton(
                 title: 'Pay',
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const ThankYouView();
-                      },
-                    ),
-                  );
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const ThankYouView();
+                        },
+                      ),
+                    );
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
                 },
               ),
               const SizedBox(
