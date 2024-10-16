@@ -95,7 +95,6 @@ class CustomerModel {
         'invoice_prefix': invoicePrefix,
         'invoice_settings': invoiceSettings?.toJson(),
         'livemode': livemode,
-        'metadata': metadata?.toJson(),
         'name': name,
         'next_invoice_sequence': nextInvoiceSequence,
         'phone': phone,

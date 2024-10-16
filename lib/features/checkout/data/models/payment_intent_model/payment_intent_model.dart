@@ -20,7 +20,7 @@ class PaymentIntentModel {
   String? confirmationMethod;
   int? created;
   String? currency;
-  dynamic customer;
+  String? customer;
   dynamic description;
   dynamic invoice;
   dynamic lastPaymentError;
@@ -30,6 +30,7 @@ class PaymentIntentModel {
   dynamic nextAction;
   dynamic onBehalfOf;
   dynamic paymentMethod;
+  dynamic paymentMethodConfigurationDetails;
   PaymentMethodOptions? paymentMethodOptions;
   List<dynamic>? paymentMethodTypes;
   dynamic processing;
@@ -71,6 +72,7 @@ class PaymentIntentModel {
     this.nextAction,
     this.onBehalfOf,
     this.paymentMethod,
+    this.paymentMethodConfigurationDetails,
     this.paymentMethodOptions,
     this.paymentMethodTypes,
     this.processing,
@@ -110,7 +112,7 @@ class PaymentIntentModel {
       confirmationMethod: json['confirmation_method'] as String?,
       created: json['created'] as int?,
       currency: json['currency'] as String?,
-      customer: json['customer'] as dynamic,
+      customer: json['customer'] as String?,
       description: json['description'] as dynamic,
       invoice: json['invoice'] as dynamic,
       lastPaymentError: json['last_payment_error'] as dynamic,
@@ -122,6 +124,8 @@ class PaymentIntentModel {
       nextAction: json['next_action'] as dynamic,
       onBehalfOf: json['on_behalf_of'] as dynamic,
       paymentMethod: json['payment_method'] as dynamic,
+      paymentMethodConfigurationDetails:
+          json['payment_method_configuration_details'] as dynamic,
       paymentMethodOptions: json['payment_method_options'] == null
           ? null
           : PaymentMethodOptions.fromJson(
@@ -164,10 +168,11 @@ class PaymentIntentModel {
         'last_payment_error': lastPaymentError,
         'latest_charge': latestCharge,
         'livemode': livemode,
-        'metadata': metadata?.toJson(),
         'next_action': nextAction,
         'on_behalf_of': onBehalfOf,
         'payment_method': paymentMethod,
+        'payment_method_configuration_details':
+            paymentMethodConfigurationDetails,
         'payment_method_options': paymentMethodOptions?.toJson(),
         'payment_method_types': paymentMethodTypes,
         'processing': processing,
