@@ -12,6 +12,7 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 class StripeService {
   ApiService apiService = ApiService(Dio());
   Future<CustomerModel> createCustomer() async {
+    // ignore: missing_required_param
     Response resopnse = await apiService.postRequest(
       baseUrl: kStripeBaseUrl,
       endPoint: 'v1/customers',
@@ -42,11 +43,11 @@ class StripeService {
       {String customerId = 'cus_R2GVCrHZSZNfBp'}) async {
     Response resopnse = await apiService.postRequest(
       baseUrl: kStripeBaseUrl,
-      endPoint: 'v1/payment_intents',
+      endPoint: 'v1/ephemeral_keys',
       token: ApiKeys.stripeSecretKey,
       contentType: Headers.formUrlEncodedContentType,
       headersInput: {
-        'Authorization': 'Bearer ${ApiKeys.stripeSecretKey}',
+        'Authorization':'Bearer ${ApiKeys.stripeSecretKey}',
         'Content-Type': 'application/x-www-form-urlencoded',
         'Stripe-Version': '2024-09-30.acacia'
       },
@@ -68,7 +69,7 @@ class StripeService {
         customFlow: false,
         // Main params
         merchantDisplayName: 'Amir Ahmed',
-        paymentIntentClientSecret: initiPaymentSheetInputModel.ClientSecret,
+        paymentIntentClientSecret: initiPaymentSheetInputModel.clientSecret,
         // Customer keys
         customerEphemeralKeySecret: initiPaymentSheetInputModel.ephemeralKey,
         customerId: initiPaymentSheetInputModel.customerId,
@@ -77,7 +78,7 @@ class StripeService {
     );
   }
 
-  Future displayPaymentSheet() async {
+  Future<void> displayPaymentSheet() async {
     await Stripe.instance.presentPaymentSheet();
   }
 
@@ -85,13 +86,13 @@ class StripeService {
       {String customerid = 'cus_R2GVCrHZSZNfBp',
       required PaymentIntentInputModel paymentIntentInputModel}) async {
     EphemeralKeyModel ephemeralKey =
-        await createEphemeralKey(customerId: customerid);
+        await createEphemeralKey();
     PaymentIntentModel paymentIntentModel = await createPaymentIntent(
         paymentIntentInputModel: paymentIntentInputModel);
     await initPaymentSheet(
       initiPaymentSheetInputModel: InitiPaymentSheetInputModel(
-          ClientSecret: paymentIntentModel.clientSecret!,
-          ephemeralKey: ephemeralKey.id,
+          clientSecret: paymentIntentModel.clientSecret!,
+          ephemeralKey: ephemeralKey.secret,
           customerId: customerid),
     );
     await displayPaymentSheet();
